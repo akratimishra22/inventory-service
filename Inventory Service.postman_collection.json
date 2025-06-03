@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "9895b960-4a63-45ba-9ffe-34f00651ef1d",
+		"name": "Inventory Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24311590",
+		"_collection_link": "https://gharelu.postman.co/workspace/Gharelu~119bd922-44ef-40ab-bfee-38d6d8c43410/collection/24311590-9895b960-4a63-45ba-9ffe-34f00651ef1d?action=share&source=collection_link&creator=24311590"
+	},
+	"item": [
+		{
+			"name": "CreateInventory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"availableQuantity\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInventoryByProductId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateInventoryIncrement",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory/increment/1?quantity=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory",
+						"increment",
+						"1"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateInventoryDecrement",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory/decrement/1?quantity=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory",
+						"decrement",
+						"1"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllInventories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteInventory",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8088/inventory-service/inventory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"inventory-service",
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
